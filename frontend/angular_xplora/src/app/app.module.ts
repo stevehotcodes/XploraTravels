@@ -9,6 +9,10 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     SignInComponent,
     LandingPageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ResetPasswordComponent,
+    AdminDashboardComponent,
+    UsersComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -51,3 +51,13 @@ app-landing-page::before,app-login::before,app-signup::before{
     background: rgba(0,0,0,1);
 
 }
+app-admin-dashboard,app-users,app-user-profile{
+    flex:1;
+    /* border:2px solid red; */ 
+    display:flex;
+    justify-content: center;
+    /* align-items:center; */
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    background-color:grey;
+}
