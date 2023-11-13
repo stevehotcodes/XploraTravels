@@ -1,0 +1,11 @@
+.not-found{
+    flex:1;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://kfg6bckb.media.zestyio.com/yalantis-interactive-404.gif") no-repeat;
+    background-size: cover;
+
+
+}

@@ -1,1 +1,30 @@
-<p>sign-up works!</p>
+<div id="form-wrapper">
+    <h1>Sign up </h1>
+    <form id="signupForm" [formGroup]="signUpForm"  (ngSubmit)="createUser()">
+        <div  class="formgroup">
+            <label>Fullname</label>
+            <input type="text" name="fullname" id="fullname"  formControlName="fullname">
+        </div>
+
+        <div  class="formgroup">
+            <label>Email</label>
+            <input type="text" name="email" id="email" formControlName="email">
+        </div>
+
+        <div  class="formgroup">
+            <label>Password</label>
+            <input type="password" name="password" id="password" formControlName="password">
+        </div>
+
+        <div  class="formgroup">
+            <label>Confirm password</label>
+            <input type="password" name="confirmPasword" id="confirmPassword">
+        </div>
+
+        <div class="formgroup">
+            <button type="submit" >Sign up</button>
+        </div>
+        <p><a routerLink="/signin" style="color:white">Already a user?</a></p>
+    </form>
+
+</div>

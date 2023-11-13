@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Montserrat&display=swap');
+
+
+:root {
+    --main-bg-color: #F5F5F5;
+    --secondary-bg-color: #F1F0F0;
+    --drop-shadow: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    --theme-purple-color: #832BCE;
+    --theme-lighter-purple: #b42bce;
+    --main-blue-color: #2DD3DB;
+    --default-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    --secondary-blue-color: #1a73e8;
+    --light-green: #23D18B;
+    --light-red: #F9685E;
+    --admin-background-color:#2c2c38;
+    --admin-cards-bg-color:#21212d;
+}
+*{
+    font-family: 'Jost', 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    margin: 0;
+    min-height: 100svh;
+    width: 100%;
+}
+app-root {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    min-height: 100svh;
+    width: 100%;
+}
+app-landing-page,app-sign-up,app-sign-in{
+    flex:1;
+    /* border:2px solid red; */
+    background:url("./assets/cosmic-timetraveler-jQvOExlroYA-unsplash.jpg");
+    
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    background-color:grey;
+
+}
+app-landing-page::before,app-login::before,app-signup::before{
+    content:"";
+    background: rgba(0,0,0,1);
+
+}
