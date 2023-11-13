@@ -1,0 +1,170 @@
+.side-nav-bar{
+    flex:0.13;
+    /* border:2px solid blue; */
+    background-color: rgb(16,26,39);
+    color:white;
+    display:flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap:5rem;
+    /* position:sticky; */
+
+}
+.admin-links{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    cursor:pointer;
+    /* position:sticky; */
+}
+.admin-links>div{
+    width:100%;
+    padding:0.1rem;
+}
+.admin-links>div:hover{
+    color:gray;
+    /* background-color: #645fc6; */
+    width:100%
+
+}
+
+h1{
+    text-align:center;
+}
+#log-out{
+ margin-bottom :1rem;;
+}
+.main-content-wrapper{
+    flex:0.9;
+    /* border:2px solid green; */
+    background-color:rgb(226,239,241);
+
+}
+.top-nav-wrapper{
+     background-color:rgb(16,26,39);; 
+     width:99.9%;
+     box-shadow: 2px 2px 2px black;
+     height:6rem;
+     color:white;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     position:sticky;
+}
+
+.salutation{
+    font-size: 1.2rem;
+    padding:0.5rem;
+  
+}
+.add-task-btn{
+    background-color: #5d56C5;
+    padding:1rem;
+    border-radius: 10rem;
+}
+.cards-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    gap:01rem;
+    margin:1rem;
+    justify-content: center;
+    
+}
+.card{
+    width:10rem;
+    height:10rem;
+    /* background-color: var(--admin-cards-bg-color); */
+    /* background-color: #2c2c38; */
+    /* border:0.2px solid var(--admin-cards-bg-color); */
+    box-shadow: 2px 2px 2px 2px black;
+    font-size: 1rem;
+    color:black;
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+    padding:.1rem;
+
+}
+
+svg{
+    width:70px;
+    height:70px;
+}
+button {
+    justify-self: center; 
+    background-color:#5d56C5;
+    border:none;
+    padding:0.5rem;
+    color:white;
+    margin:0.5rem;
+    border-radius: 10rem;
+}
+.summary-dasboard-title-wrapper{
+    /* border:2px solid red; */
+    flex:1;
+    display: flex;
+    margin-top:-0.9rem;
+    align-items:center;
+    color:rgb(150,139,120);
+    gap:2rem;
+
+}
+.admin-cards-wrapper{
+    display: flex;
+    gap:0.5rem;
+    flex:1;
+    flex-wrap: wrap;
+    color:black;
+}
+.card1{
+    background-color: red;
+    color:white;
+    /* font-size: 1rem; */
+    flex-direction: column;
+    flex-wrap:wrap ;
+}
+.card2{
+    background-color:blue;
+    color:white;
+    /* font-size: 1rem; */
+    flex-direction: column;
+    flex-wrap:wrap ;
+}
+.card4{
+    background-color: rgb(207, 207, 163);
+    color:white;
+    /* font-size: 1rem; */
+    flex-direction: column;
+    flex-wrap:wrap ;
+}
+.card3{
+    background-color:rgb(185, 199, 185);
+    color:white;
+    /* font-size: 1rem; */
+    flex-direction: column;
+    flex-wrap:wrap ;
+}
+.random-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.popular-events-card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap:0.4rem;
+}
+/* .card1>p{
+    font-size: 1.5rem;
+} */
+table, th, td {
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+  th{
+    border-collapse: collapse;
+  }

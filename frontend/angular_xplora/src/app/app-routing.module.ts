@@ -7,6 +7,12 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { EventsComponent } from './components/events/events.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { BookingsComponent } from './components/bookings/bookings.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { UserEventsComponent } from './components/user-events/user-events.component';
+import { UserBookingsComponent } from './components/user-bookings/user-bookings.component';
 
 const routes: Routes = [
   {path:"",component:LandingPageComponent},
@@ -15,6 +21,12 @@ const routes: Routes = [
   {path:"admin",component:AdminDashboardComponent},
   {path:"users",component:UsersComponent},
   {path:"profile",component:UserProfileComponent},
+  {path:"events",component:EventsComponent},
+  {path:"addevent",component:AddEventComponent},
+  {path:"bookings",component:BookingsComponent},
+  {path:"user",component:UserDashboardComponent},
+  {path:"user-events",component:UserEventsComponent},
+  {path:"user-bookings",component:UserBookingsComponent},
   {path:"**",component:NotfoundComponent}
   
 ];

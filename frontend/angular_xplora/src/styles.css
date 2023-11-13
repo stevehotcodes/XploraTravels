@@ -51,7 +51,7 @@ app-landing-page::before,app-login::before,app-signup::before{
     background: rgba(0,0,0,1);
 
 }
-app-admin-dashboard,app-users,app-user-profile{
+app-admin-dashboard,app-users,app-user-profile,app-events,app-bookings,app-user-dashboard,app-user-events{
     flex:1;
     /* border:2px solid red; */ 
     display:flex;
@@ -60,4 +60,15 @@ app-admin-dashboard,app-users,app-user-profile{
     flex-wrap: wrap;
     flex-shrink: 1;
     background-color:grey;
+}
+app-add-event{
+    flex:1;
+    /* border:2px solid red; */ 
+    display:flex;
+    justify-content: center;
+    /* align-items:center; */
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    color:rgb(161, 125, 125);
+
 }
