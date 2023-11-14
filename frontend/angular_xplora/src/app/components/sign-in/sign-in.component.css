@@ -1,15 +1,9 @@
-/* form{
-    border:2px solid red;
-    
-} */
 h1{
     text-align:center;
     color:white;
 }
 #form-wrapper{
-    /* background-color:var(--main-bg-color); */
     width:50vw;
-    /* flex:1; */
     min-height:90svh;
     display:flex;
     flex-direction: column;
@@ -18,12 +12,11 @@ h1{
 form{
     width: 70%;
     height:70%;
-    /* border:2px solid red; */
     margin:0 auto;
     padding:1rem;
-    /* box-shadow: var(--box-shadow); */
     box-shadow: 2px 5px 5px 2px  rgba(0,0,0, 1);
     color:white;
+    background-color: rgb(84, 88, 88);
 }
 label{
     color:white;
@@ -40,7 +33,7 @@ label{
     outline:none;
     border-bottom:0.3px solid gray;
     background:transparent;
-    color:rgb(66, 60, 60);
+    color: white;
     font-size: 1.2rem;
 }
 input:focus {

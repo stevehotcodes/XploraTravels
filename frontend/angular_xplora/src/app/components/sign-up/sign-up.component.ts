@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
   signUpForm!:FormGroup
+  textColor:string="red"
+  fontSize:number=0.7
+  passwordMismatch:boolean=false
 
   constructor(public fb:FormBuilder ,public router:Router){
     this.signUpForm=this.fb.group({
-      fullname:  ['', [Validators.required]],
+      fullname:  ['', [Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required,Validators.minLength(7)]],
+      confirmPassword:['',[Validators.required, Validators.minLength(7)]]
 
     })
   }
@@ -22,8 +26,26 @@ export class SignUpComponent {
   
   createUser(){
     console.log(this.signUpForm.value)
-    // let details:InewUserDetails=this.signUpForm.value
-    // this.signUpSvc.registerUser(details)
-    // this.router.navigate(["/login"]);
+    let newUserData=this.signUpForm.value
+    delete newUserData.confirmPassword
+    console.log(newUserData)
+
   }
+
+    
+  get fullname(){
+    return this.signUpForm.controls['fullname']
+  }
+  
+  get email(){
+    return this.signUpForm.controls['email']
+  }
+  get password(){
+    return this.signUpForm.controls['password']
+  }
+
+  get confirmPassword(){
+    return this.signUpForm.controls['confirmPassword']
+  }
+
 }

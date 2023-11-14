@@ -4,21 +4,35 @@
         <div  class="formgroup">
             <label>Fullname</label>
             <input type="text" name="fullname" id="fullname"  formControlName="fullname">
+            <div *ngIf="fullname.errors && fullname!.invalid &&fullname!.touched">
+                <div *ngIf="signUpForm.get('fullname')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">fullname is required</div>
+            </div>
         </div>
 
         <div  class="formgroup">
             <label>Email</label>
             <input type="text" name="email" id="email" formControlName="email">
+            <div *ngIf="email?.errors && email!.invalid &&email!.touched">
+                <div *ngIf="signUpForm.get('email')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">email is required</div>
+            </div>
         </div>
 
         <div  class="formgroup">
             <label>Password</label>
             <input type="password" name="password" id="password" formControlName="password">
+            <div *ngIf="password.errors && password!.invalid &&password!.touched">
+                <div *ngIf="signUpForm.get('password')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">password is required</div>
+            </div>
         </div>
 
         <div  class="formgroup">
             <label>Confirm password</label>
             <input type="password" name="confirmPasword" id="confirmPassword">
+            <div *ngIf="confirmPassword.errors && confirmPassword!.invalid &&confirmPassword!.touched">
+                <div *ngIf="signUpForm.get('confirmPassword')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">password is required</div>
+                <span *ngIf="confirmPassword!.value!==password!.value" [style.color]="textColor" [style.font-size.rem]="fontSize">Password do not match</span>
+
+            </div>
         </div>
 
         <div class="formgroup">

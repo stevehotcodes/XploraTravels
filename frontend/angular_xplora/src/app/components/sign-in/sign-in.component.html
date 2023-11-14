@@ -6,11 +6,17 @@
         <div class="formgroup">
             <label>Email</label>
             <input type="text" name="email" id="email" formControlName="email">
+            <div *ngIf="email?.errors && email!.invalid &&email!.touched">
+                <div *ngIf="login.get('email')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">email is required</div>
+            </div>
         </div>
 
         <div  class="formgroup">
             <label>Password</label>
             <input type="password" name="password" id="password" formControlName="password">
+            <div *ngIf="password.errors && password!.invalid &&password!.touched">
+                <div *ngIf="login.get('password')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">password is required</div>
+            </div>
         </div>
 
       

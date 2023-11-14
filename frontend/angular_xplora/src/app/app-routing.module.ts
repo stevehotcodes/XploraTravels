@@ -25,8 +25,8 @@ const routes: Routes = [
   {path:"addevent",component:AddEventComponent},
   {path:"bookings",component:BookingsComponent},
   {path:"user",component:UserDashboardComponent},
-  {path:"user-events",component:UserEventsComponent},
-  {path:"user-bookings",component:UserBookingsComponent},
+  {path:"uevents",component:UserEventsComponent},
+  {path:"bookinguser",component:UserBookingsComponent},
   {path:"**",component:NotfoundComponent}
   
 ];

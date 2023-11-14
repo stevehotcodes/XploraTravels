@@ -7,9 +7,8 @@ h1{
     color:white;
 }
 #form-wrapper{
-    /* background-color:var(--main-bg-color); */
+    
     width:50vw;
-    /* flex:1; */
     min-height:90svh;
     display:flex;
     flex-direction: column;
@@ -18,12 +17,12 @@ h1{
 form{
     width: 70%;
     height:70%;
-    /* border:2px solid red; */
     margin:0 auto;
     padding:1rem;
     /* box-shadow: var(--box-shadow); */
     box-shadow: 2px 5px 5px 2px  rgba(0,0,0, 1);
     color:white;
+    background-color: rgb(84, 88, 88);
 }
 label{
     color:black;

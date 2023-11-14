@@ -19,6 +19,10 @@ import { BookingsComponent } from './components/bookings/bookings.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserEventsComponent } from './components/user-events/user-events.component';
 import { UserBookingsComponent } from './components/user-bookings/user-bookings.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AddReviewsComponent } from './components/add-reviews/add-reviews.component';
+
 
 @NgModule({
   declarations: [
@@ -36,13 +40,16 @@ import { UserBookingsComponent } from './components/user-bookings/user-bookings.
     BookingsComponent,
     UserDashboardComponent,
     UserEventsComponent,
-    UserBookingsComponent
-  ],
+    UserBookingsComponent,
+    AddReviewsComponent
+    
+     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

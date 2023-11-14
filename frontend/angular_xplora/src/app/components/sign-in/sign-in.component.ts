@@ -11,6 +11,8 @@ export class SignInComponent {
   login!:FormGroup
   loggedIn:boolean= false
   userCredentials!:any
+  textColor:string="red"
+  fontSize:number=0.7
 
   constructor(private fb :FormBuilder, private router:Router){
     this.login=this.fb.group({
@@ -39,6 +41,17 @@ export class SignInComponent {
       // }
      
     
+  }
+
+
+  get email(){
+    return this.login.controls['email']
+  }
+
+
+
+  get password(){
+    return this.login.controls['password']
   }
   
 }
