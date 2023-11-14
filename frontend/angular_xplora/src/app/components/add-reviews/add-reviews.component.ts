@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { EventEmitter,Output } from '@angular/core';
 @Component({
   selector: 'app-add-reviews',
   templateUrl: './add-reviews.component.html',
   styleUrls: ['./add-reviews.component.css']
 })
 export class AddReviewsComponent {
-  constructor(private dialogRef: MatDialogRef<AddReviewsComponent>) {}
+  @Output () closeModalEvent=new EventEmitter()
 
-  close() {
-    this.dialogRef.close();
-  }
+ closeModal(){
+  this.closeModalEvent.emit()
+ }
+ 
 }

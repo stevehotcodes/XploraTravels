@@ -35,9 +35,7 @@ app-root {
 }
 app-landing-page,app-sign-up,app-sign-in{
     flex:1;
-    /* border:2px solid red; */
     background:url("./assets/cosmic-timetraveler-jQvOExlroYA-unsplash.jpg");
-    
     display:flex;
     justify-content: center;
     align-items:center;
@@ -46,7 +44,26 @@ app-landing-page,app-sign-up,app-sign-in{
     background-color:rgb(19, 2, 2);
 
 }
-app-landing-page::before,app-login::before,app-signup::before{
+
+app-add-reviews{
+    flex:1;  
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    /* width:100%; */
+    height:inherit;
+    background-color:rgb(20, 19, 19);
+    background-color: rgba(51, 50, 50, 0.5);
+    backdrop-filter: blur(2px); /* Adjust the blur effect as needed */
+    position:relative;
+    top:-30rem;
+    left:0rem;
+
+}
+
+app-landing-page::before,app-login::before,app-signup::before,app-add-reviews::before{
     content:"";
     background: rgb(255, 255, 255);
 

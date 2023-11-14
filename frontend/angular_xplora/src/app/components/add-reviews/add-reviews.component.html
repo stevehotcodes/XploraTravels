@@ -1,3 +1,8 @@
-<p>add-reviews works!</p>
-<h1>Hello, I'm a Modal!</h1>
-    <button mat-button (click)="close()">Close</button>
+<div class="backdrop"></div>
+<div id="modal-wrapper">
+       <ng-content></ng-content>
+        <button (click)="closeModal()">Close</button>
+</div>
+
+   
+    

@@ -29,6 +29,7 @@ export class SignUpComponent {
     let newUserData=this.signUpForm.value
     delete newUserData.confirmPassword
     console.log(newUserData)
+    this.router.navigate(["signin"])
 
   }
 

@@ -16,6 +16,7 @@ import { UserBookingsComponent } from './components/user-bookings/user-bookings.
 
 const routes: Routes = [
   {path:"",component:LandingPageComponent},
+  {path:"reservation",component:UserBookingsComponent},
   {path:"signin",component:SignInComponent},
   {path:"signup",component:SignUpComponent},
   {path:"admin",component:AdminDashboardComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path:"bookings",component:BookingsComponent},
   {path:"user",component:UserDashboardComponent},
   {path:"uevents",component:UserEventsComponent},
-  {path:"bookinguser",component:UserBookingsComponent},
+
   {path:"**",component:NotfoundComponent}
   
 ];

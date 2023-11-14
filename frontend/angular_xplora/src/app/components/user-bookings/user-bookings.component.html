@@ -1,4 +1,4 @@
-<p>user-bookings works!</p>
+
 <div class="side-nav-bar">
     <h1>Xplora Trours</h1>
     <div class="admin-links">
@@ -7,7 +7,7 @@
         </div>
         
         <div routerLink="/uevents">Events</div>
-        <div routerLink="/Ubookings">Booked</div>
+        <div routerLink="/reservation">Booked</div>
         <div routerLink="/profile">Profile</div>
         
     </div>
@@ -61,14 +61,31 @@
                       <th>Available Date</th>
                       <th>Price</th>
                       <th>Booked by</th>
+                      <th>Actions</th>
                       </tr>
                     <tr>
-                        <td>thetehetehhee</td>
-                        <td>tehetghee</td>
-                        <td>thetehetehe</td>
-                        <td>theytehetehe</td>
-                        <td>theytehete</td>
-                        <td><button mat-button (click)="openModal()">Review</button></td>
+                        <td>RCEXRTY*</td>
+                        <td>Safari Tour</td>
+                        <td>Mombasa</td>
+                        <td>27/11/2023</td>
+                        <td>Ksh. 78000</td>
+                        <td>steve</td>
+                        
+                        <td><button  (click)="openModal()">Review</button></td>
+                        
+
+                     
+                    </tr>
+
+                    <tr>
+                        <td>RCEXRTY*</td>
+                        <td>Safari Tour</td>
+                        <td>Mombasa</td>
+                        <td>27/11/2023</td>
+                        <td>Ksh. 78000</td>
+                        <td>steve</td>
+                        
+                        <td><button  (click)="openModal()">Review</button></td>
                         
 
                      
@@ -81,7 +98,17 @@
 
             </div>
             
-            
+            <app-add-reviews *ngIf="showModal" (closeModalEvent)="closeModal()">
+                <!-- Modal content goes here -->
+                <form action="" style="background-color: white; width:50%; height:100%; display: flex; flex-direction: column;align-items: center; ">
+                    <label for="">Review</label>
+                    <div style="width:20rem;height:20rem; ">
+                        <input type="text" style="width:100%;height:30%" >
+                        <button type="Submit">Submit</button>
+                    </div>
+                    
+                </form>
+            </app-add-reviews>
            
         
       

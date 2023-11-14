@@ -22,33 +22,18 @@ export class SignInComponent {
   }
  
 
-  //  logIn(){
-  
-  //   this.logInSvc.login(userCredentials)
-  // }
+ 
   async userAuthentication(){
     
     this.userCredentials =this.login.value;
-    //  let token = await this.logInSvc.login(this.userCredentials) 
-    //  console.log( "this is my response", token)
-     
-    // let verificationUser=await this.logInSvc.verifyToken()
-      //  if(verificationUser.info.role==="admin"){
-      //    this.router.navigate(["/admin"])
-      //  }
-      //  else if(verificationUser.info.role==="employees"){
-      //   this.router.navigate(["/user-dashboard"])
-      // }
-     
-    
+    this.router.navigate(["/admin"])
+       
   }
 
 
   get email(){
     return this.login.controls['email']
   }
-
-
 
   get password(){
     return this.login.controls['password']
