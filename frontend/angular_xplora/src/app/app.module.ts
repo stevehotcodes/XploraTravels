@@ -22,8 +22,7 @@ import { UserBookingsComponent } from './components/user-bookings/user-bookings.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddReviewsComponent } from './components/add-reviews/add-reviews.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +48,9 @@ import { AddReviewsComponent } from './components/add-reviews/add-reviews.compon
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

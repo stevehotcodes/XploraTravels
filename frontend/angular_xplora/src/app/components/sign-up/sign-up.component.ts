@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,10 +13,13 @@ export class SignUpComponent {
   textColor:string="red"
   fontSize:number=0.7
   passwordMismatch:boolean=false
+  isSignUp:boolean=false
+  notification:string=''
+  
 
-  constructor(public fb:FormBuilder ,public router:Router){
+  constructor(public fb:FormBuilder ,public router:Router,private userSvc:UserService){
     this.signUpForm=this.fb.group({
-      fullname:  ['', [Validators.required,Validators.minLength(3)]],
+      fullName:  ['', [Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,Validators.minLength(7)]],
       confirmPassword:['',[Validators.required, Validators.minLength(7)]]
@@ -25,17 +29,37 @@ export class SignUpComponent {
 
   
   createUser(){
-    console.log(this.signUpForm.value)
-    let newUserData=this.signUpForm.value
-    delete newUserData.confirmPassword
-    console.log(newUserData)
-    this.router.navigate(["signin"])
+    if(this.signUpForm.value!==""){
+     
+      let newUserData:any=this.signUpForm.value
+      delete newUserData.confirmPassword
+      console.log(newUserData)
+      
+      this.userSvc.registerNewUser(newUserData).subscribe(
+        res=>{
+            console.log(res);
+            this.isSignUp=true;
+            this.notification=res.message
+             
+        },
+        error=>{
+          console.log(error)
+        }
+      )
+      this.router.navigate(["signin"])
+
+    }
+    else{
+      
+      console.log("input required")
+    }
+   
 
   }
 
     
-  get fullname(){
-    return this.signUpForm.controls['fullname']
+  get fullName(){
+    return this.signUpForm.controls['fullName']
   }
   
   get email(){

@@ -1,11 +1,12 @@
 <div id="form-wrapper">
     <h1>Sign up </h1>
     <form id="signupForm" [formGroup]="signUpForm"  (ngSubmit)="createUser()">
+        <p *ngIf="isSignUp==true">{{notification}}</p>
         <div  class="formgroup">
             <label>Fullname</label>
-            <input type="text" name="fullname" id="fullname"  formControlName="fullname">
-            <div *ngIf="fullname.errors && fullname!.invalid &&fullname!.touched">
-                <div *ngIf="signUpForm.get('fullname')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">fullname is required</div>
+            <input type="text" name="fullname" id="fullname"  formControlName="fullName">
+            <div *ngIf="fullName.errors && fullName!.invalid &&fullName!.touched">
+                <div *ngIf="signUpForm.get('fullName')?.hasError('required')" [style.color]="textColor "[style.font-size.rem]="fontSize">fullname is required</div>
             </div>
         </div>
 

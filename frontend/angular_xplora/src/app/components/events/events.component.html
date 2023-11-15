@@ -50,24 +50,24 @@
            
             <div class="random-content">
                 <h2>Events</h2>
-                <table>
+                <table >
                     <tr>
-                      <th>Event No</th>
-                      <th>Image</th>
+                      <!-- <th></th> -->
+                      <!-- <th>Image</th> -->
                       <th>Event type</th>
                       <th>Destination</th>
                       <th>Available Date</th>
                       <th>Price</th>
-                      <th>Actions</th>
+                      <!-- <th>Actions</th> -->
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let event of events">
+                        <!-- <td>{{}}</td> -->
+                        <td>{{event.tourType}}</td>
+                        <td>{{event.destination}}</td>
+                        <td>{{event.availableDate | date}}</td>
+                        <td>{{event.price}}</td>
+                        <!-- <td></td>
+                        <td></td> -->
 
                      
                     </tr>
