@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EventsService, IEvent } from 'src/app/services/events.service';
 
 @Component({
@@ -8,9 +9,17 @@ import { EventsService, IEvent } from 'src/app/services/events.service';
 })
 export class EventsComponent implements OnInit {
   events:IEvent[]=[]
-  constructor(private eventSvc:EventsService){}
+  id!:string
+  constructor(private eventSvc:EventsService,private route:ActivatedRoute){
+    
+  }
 
    ngOnInit(): void {
+    // this.id=this.route.snapshot.params['events.id']
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    })
+    
       this.eventSvc.fetchAllEvents().subscribe(
         res=>{
           console.log(res)
@@ -18,6 +27,22 @@ export class EventsComponent implements OnInit {
           console.log(res)
         }
       )
+      
+   }
+   deleteEvent(event:IEvent){
+    if (!event.id) {
+      console.error('ID is undefined or null');
+      return;
+    }
+    console.log('delete clicked ',event.id)
+    this.eventSvc.deleteEvent(event.id).subscribe(
+      res=>{
+        console.log(res)
+      },
+      err=>{
+        console.log(err)
+      }
+    )
    }
 
 }

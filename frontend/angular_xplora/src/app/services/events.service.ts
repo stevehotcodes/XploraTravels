@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 export interface IEvent{
+  id: string
   title:string
   tourType:string
   destination:string
@@ -37,4 +39,12 @@ export class EventsService {
     })
     return this.http.get<IEvent[]>('http://localhost:3400/tours/all',{headers})
   }
+  deleteEvent(id:string):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+    const apiUrl=`http://localhost:3400/tours/tours/`
+    return this.http.delete(apiUrl+id,{headers})
+  }
+  
 }

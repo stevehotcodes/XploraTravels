@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-events.component.css']
 })
 export class UserEventsComponent {
+   
+
 
 }

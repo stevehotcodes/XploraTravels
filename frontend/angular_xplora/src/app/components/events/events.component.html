@@ -58,7 +58,7 @@
                       <th>Destination</th>
                       <th>Available Date</th>
                       <th>Price</th>
-                      <!-- <th>Actions</th> -->
+                      <th>Actions</th>
                     </tr>
                     <tr *ngFor="let event of events">
                         <!-- <td>{{}}</td> -->
@@ -66,8 +66,12 @@
                         <td>{{event.destination}}</td>
                         <td>{{event.availableDate | date}}</td>
                         <td>{{event.price}}</td>
-                        <!-- <td></td>
-                        <td></td> -->
+                        <td>
+                            <button type="submit" (click)="deleteEvent(event)">
+                                delete
+                            </button>
+                        </td>
+                        <!-- <td></td> -->
 
                      
                     </tr>
