@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 
@@ -19,7 +20,7 @@ export class UserService {
 
   // let apiUrl:string=`http://localhost:3400/users`;
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   registerNewUser(newUserData:any):Observable<any>{
     const headers = new HttpHeaders({
@@ -53,6 +54,13 @@ export class UserService {
     return this.http.delete<any>(apiUrl+id,{headers})
   }
   
+  logout(){
+    this.router.navigate(['']);
+    localStorage.clear()
+    console.log(localStorage.getItem('token'));
+
+
+  }
     
 
 

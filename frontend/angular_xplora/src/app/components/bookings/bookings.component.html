@@ -53,26 +53,31 @@
                 <table>
                     <tr>
                       <th>Event No</th>
-                    
+                     <th>Event Title</th>
                       <th>Event type</th>
                       <th>Destination</th>
                       <th>Available Date</th>
                       <th>Price</th>
                       <th>Booked by</th>
+                      <th>Status</th>
                       </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-
-                     
+                    <tr *ngFor="let event of events">
+                        <td>{{event.id}}</td>
+                        <td>{{event.title}}</td>
+                        <td>{{event.tourType}}</td>
+                        <td>{{event.destination}}</td>
+                        <td>{{event.availableDate | date}}</td>
+                        <td>{{event.price| currency :"Ksh"}}</td>
+                        <td>{{event.fullName}}</td>
+                        <td>{{event.eventStatus}}</td>                 
                     </tr>
                    
                   </table>
+                  <div *ngIf="events.length==0">
+                    <p style="color:red;font-size: 2.4rem; text-align:center"> Sorry No bookings found </p>
+                </div>
+            
+                  
                   
                 
 

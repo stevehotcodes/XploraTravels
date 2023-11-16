@@ -38,6 +38,7 @@ export class EventsComponent implements OnInit {
     this.eventSvc.deleteEvent(event.id).subscribe(
       res=>{
         console.log(res)
+        window.location.reload()
       },
       err=>{
         console.log(err)

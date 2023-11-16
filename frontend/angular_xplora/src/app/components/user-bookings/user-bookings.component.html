@@ -52,7 +52,7 @@
            
             <div class="random-content">
                 <h2>Events</h2>
-                <table>
+                <table *ngFor="let event of events">
                     <tr>
                       <th>Event No</th>
                     
@@ -64,6 +64,20 @@
                       <th>Actions</th>
                       </tr>
                     <tr>
+                        <td>{{event.id}}</td>
+                        <td>{{event.tourType}}</td>
+                        <td>{{event.destination}}</td>
+                        <td>{{event.availableDate| date}}</td>
+                        <td>{{event.price | currency :"Ksh"}}</td>
+                        <td>{{event.fullName}}</td>
+                        
+                        <td><button  (click)="openModal()">Review</button></td>
+                        
+
+                     
+                    </tr>
+
+                    <!-- <tr>
                         <td>RCEXRTY*</td>
                         <td>Safari Tour</td>
                         <td>Mombasa</td>
@@ -75,21 +89,7 @@
                         
 
                      
-                    </tr>
-
-                    <tr>
-                        <td>RCEXRTY*</td>
-                        <td>Safari Tour</td>
-                        <td>Mombasa</td>
-                        <td>27/11/2023</td>
-                        <td>Ksh. 78000</td>
-                        <td>steve</td>
-                        
-                        <td><button  (click)="openModal()">Review</button></td>
-                        
-
-                     
-                    </tr>
+                    </tr> -->
                    
                   </table>
                   

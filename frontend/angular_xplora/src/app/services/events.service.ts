@@ -13,6 +13,7 @@ export interface IEvent{
   userID:string
   duration:string
   isDeleted:string
+  fullName:string
 
 }
 
@@ -46,5 +47,21 @@ export class EventsService {
     const apiUrl=`http://localhost:3400/tours/tours/`
     return this.http.delete(apiUrl+id,{headers})
   }
+  updateEventToBooking(id:string,userID:string):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+    const apiUrl=`http://localhost:3400/tours/book/`
+    return this.http.post(apiUrl+id +'/'+userID,{headers})
+  }
+  getEventsByUser(userID:string):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+    const apiUrl=`http://localhost:3400/tours/user/`
+    return this.http.get(apiUrl+userID,{headers})
+  }
+
+
   
 }

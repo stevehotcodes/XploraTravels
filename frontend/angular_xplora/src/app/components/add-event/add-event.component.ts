@@ -18,7 +18,8 @@ export class AddEventComponent {
        destination:['',[Validators.required]],
        price:['',[Validators.required]],
        availableDate: ['',[Validators.required]],
-      image:['',[Validators.required]]
+      image:['',[Validators.required]],
+      duration:['',[Validators.required]]
     })
   }
   onSubmit(){

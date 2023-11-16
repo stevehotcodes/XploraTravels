@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
+    constructor(private userSvc:UserService ,private router:Router){
+
+    }
+    logout(){
+      this.router.navigate(['']);
+      localStorage.clear()
+      console.log(localStorage.getItem('token'));
+  
+  
+    }
     
 }
