@@ -37,16 +37,19 @@ export class SignUpComponent {
       
       this.userSvc.registerNewUser(newUserData).subscribe(
         res=>{
-            console.log(res);
+            console.log(res.message);
             this.isSignUp=true;
-            this.notification=res.message
+            this.notification=res.message 
+           
+        
+            this.router.navigate(["signin"])
              
         },
         error=>{
           console.log(error)
         }
       )
-      this.router.navigate(["signin"])
+      this.router.navigate(["signup"])
 
     }
     else{

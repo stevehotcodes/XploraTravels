@@ -21,7 +21,7 @@ export class UserService {
   
   constructor(private http:HttpClient) { }
 
-  registerNewUser(newUserData:any){
+  registerNewUser(newUserData:any):Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
       
