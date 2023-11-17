@@ -1,62 +1,69 @@
-h1 {
-    text-align: center;
-    color: black;
+/* form{
+    border:2px solid red;
+    
+} */
+h1{
+    text-align:center;
+    color:black;
 }
-
-#form-wrapper {
-    background-color: var(--main-bg-color);
-    width: 50vw;
-    min-height: 90svh;
-    display: flex;
+#form-wrapper{
+    background-color:var(--main-bg-color);
+    width:50vw;
+    /* flex:1; */
+    /* border: 2px solid red; */
+    min-height:90svh;
+    display:flex;
     flex-direction: column;
     justify-content: center;
 }
-
-form {
+form{
     width: 70%;
-    height: 70%;
+    height:70%;
+    /* border:2px solid red; */
     background-color: white;
-    margin: 0 auto;
-    padding: 1rem;
-    box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 1);
-    color: black;
+    margin:0 auto;
+    padding:1rem;
+    /* box-shadow: var(--box-shadow); */
+    box-shadow: 2px 5px 5px 2px  rgba(0,0,0, 1);
+    color:black;
 }
-
-label {
-    color: black;
-    font-size: 1.4rem;
+label{
+    color:black;
+    font-size:1.4rem;
+    /* color:white; */
 }
+.formgroup{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
 
-.formgroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
-
-.formgroup>input {
-    height: 2rem;
+.formgroup>input{
+    height:2rem;
     border: none;
-    outline: none;
-    border-bottom: 0.3px solid gray;
-    background: transparent;
-    color: black;
-    font-size: 1.5rem;
-}
+    outline:none;
+    border-bottom:0.3px solid gray;
+    background:transparent;
+    color:black;
+    
 
+    font-size: 1.5rem;
+    /* background-color: aliceblue; */
+}
 input:focus {
     background-color: lightblue;
-    border: 1px solid white;
+    border:1px solid white;
+    
+  }
+button{
+    padding:1rem;
+    color:white;
+    background-color:blue;
+    /* margin:1rem; */
+    margin:0.5rem;
 }
 
-button {
-    padding: 1rem;
-    color: white;
-    background-color: blue;
-
-    margin: 0.5rem;
-}
-
-button:hover {
+button:hover{
     background-color: transparent;
-    color: black;
+    color:black;
 }

@@ -23,8 +23,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddReviewsComponent } from './components/add-reviews/add-reviews.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchPipe } from './pipes/search.pipe';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +40,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     UserDashboardComponent,
     UserEventsComponent,
     UserBookingsComponent,
-    AddReviewsComponent,
-    SearchPipe,
-    SearchBarComponent
+    AddReviewsComponent
     
      ],
   imports: [
