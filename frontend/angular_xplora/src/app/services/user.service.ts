@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 
 export interface IUser{
+  [x: string]: any;
   id:string
   fullName:string
   email:string
@@ -53,6 +54,24 @@ export class UserService {
     const apiUrl=`http://localhost:3400/users/users/`
     return this.http.delete<any>(apiUrl+id,{headers})
   }
+  updateUser(id:string,userDetails:any):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'application/json',
+      //  'token':localStorage.getItem('token') as string
+    })
+    const apiUrl=`http://localhost:3400/users/update/`
+    return this.http.put<any>(apiUrl+id,{headers},userDetails)
+  }
+
+  getUserById(id:string):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'application/json',
+      
+    })
+    const apiUrl=`http://localhost:3400/users/one/`
+    return this.http.get<any>(apiUrl+id ,{headers})
+
+  }
   
   logout(){
     this.router.navigate(['']);
@@ -61,7 +80,8 @@ export class UserService {
 
 
   }
-    
+  
+
 
 
 
