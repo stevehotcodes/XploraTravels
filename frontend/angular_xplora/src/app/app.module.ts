@@ -23,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddReviewsComponent } from './components/add-reviews/add-reviews.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesComponent } from './components/flash-messages/flash-messages.component';
+import { EventEditComponent } from './components/event-edit/event-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserDashboardComponent,
     UserEventsComponent,
     UserBookingsComponent,
-    AddReviewsComponent
+    AddReviewsComponent,
+    FlashMessagesComponent,
+    EventEditComponent
     
      ],
   imports: [

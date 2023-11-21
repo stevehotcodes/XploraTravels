@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IUser, UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit{
   users:IUser[]=[]
   id!:string
 
-  constructor(private userSvc:UserService ,private route:ActivatedRoute){}
+  constructor(private userSvc:UserService ,private route:ActivatedRoute,private rt:Router){}
   ngOnInit(): void {
     this.route.params.subscribe(
       params=>{
@@ -38,6 +38,10 @@ export class UsersComponent implements OnInit{
         console.log(res)
       }
     )
+    alert("user deleted successfully");
+    window.location.reload()
+    this.rt.navigate(["users"])
   }
+ 
 
 }

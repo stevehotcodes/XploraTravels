@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { FlashMessagesComponent } from '../flash-messages/flash-messages.component';
+import { FlashmessagesService } from 'src/app/services/flashmessages.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,9 +16,11 @@ export class SignInComponent  {
   userCredentials!:any
   textColor:string="red"
   fontSize:number=1
+  successMessage!:string
   role!:string
-
-  constructor(private fb :FormBuilder, private router:Router,private UserSvc:UserService){
+  link:string = 'https://cdn.pixabay.com/photo/2022/03/31/13/50/login-7103076_640.png'
+  
+  constructor(private fb :FormBuilder, private router:Router,private UserSvc:UserService,private flashMsgSvc:FlashmessagesService){
     this.login=this.fb.group({
       email:["",[Validators.required,Validators.email]],
       password:["",[Validators.required]]
@@ -28,14 +32,15 @@ export class SignInComponent  {
 
  
     userAuthentication(){
-    
-    this.userCredentials =this.login.value;
+     this.userCredentials =this.login.value;
     this.UserSvc.signInUser(this.userCredentials).subscribe(
       res=>{
           this.role=res.role
           console.log("this is role",this.role,res.token);
-         
-        
+         this.loggedIn=true
+         this.successMessage="log in successfull"
+
+        //  this.link='https://cdn.pixabay.com/photo/2022/03/31/13/50/login-7103076_640.png'
          
           
           if(this.role==='admin')
@@ -55,11 +60,17 @@ export class SignInComponent  {
       }
     )
     
-   
+  
+      // this.flashMsgSvc.pushMessage({
+      //   type:'success',
+      //   message:'login successfully'
+      // })
     
+    
+    }       
   
        
-  }
+  
   
 
 

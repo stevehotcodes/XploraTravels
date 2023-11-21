@@ -73,8 +73,8 @@ h1{
     
 }
 .card{
-    width:10rem;
-    height:10rem;
+    width:25rem;
+    height:5rem;
     /* background-color: var(--admin-cards-bg-color); */
     /* background-color: #2c2c38; */
     /* border:0.2px solid var(--admin-cards-bg-color); */
@@ -161,10 +161,23 @@ button {
 /* .card1>p{
     font-size: 1.5rem;
 } */
-table, th, td {
+table, th, td,tr {
     border:1px solid black;
+    border:none;
     border-collapse: collapse;
+    text-align:center;
   }
   th{
     border-collapse: collapse;
+
+    background-color: rgb(218,226,248)
+    
+  }
+  tr{
+    background-color:rgb(233, 237, 247);
+    box-shadow: 2px 2px 2px 2px gray;
+    
+  }
+  table{
+    box-shadow: 2px 2px 2px 2px gray;
   }

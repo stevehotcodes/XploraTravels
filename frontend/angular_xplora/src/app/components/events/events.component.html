@@ -28,7 +28,7 @@
                 <div class="card card1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M32 32v432a16 16 0 0016 16h432" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="96" y="224" width="80" height="192" rx="20" ry="20" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="240" y="176" width="80" height="240" rx="20" ry="20" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="383.64" y="112" width="80" height="304" rx="20" ry="20" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                     <p>No of Events</p>
-                    <p style="font-size: 2.4rem;">23</p>
+                    <p style="font-size: 2.4rem;">{{events.length}}</p>
 
                 </div>
                 <div class="card card2">
@@ -53,23 +53,29 @@
                 <table >
                     <tr>
                       <!-- <th></th> -->
-                      <!-- <th>Image</th> -->
+                      <th>Image</th>
+                      <th>Event Title</th>
                       <th>Event type</th>
                       <th>Destination</th>
                       <th>Available Date</th>
                       <th>Price</th>
+                      <th>No. of slots</th>
                       <th>Actions</th>
                     </tr>
-                    <tr *ngFor="let event of events">
-                        <!-- <td>{{}}</td> -->
+                    <tr *ngFor="let event of events" let i="event.index">
+                        <td>
+                            <img src="{{event.image}}" alt="" style="width: 10rem;height:10rem;"></td>
+                         <td>{{event.title}}</td>   
                         <td>{{event.tourType}}</td>
                         <td>{{event.destination}}</td>
                         <td>{{event.availableDate | date}}</td>
                         <td>{{event.price}}</td>
+                        <td>{{event.slots}}</td>
                         <td>
-                            <button type="submit" (click)="deleteEvent(event)">
+                            <button type="submit" (click)="deleteEvent(event)" style="background-color: red;">
                                 delete
                             </button>
+                            <button  routerLink="/event/{{event.id}}/edit"  style="background-color: blue;">edit</button>
                         </td>
                         <!-- <td></td> -->
 
@@ -78,7 +84,7 @@
                    
                   </table>
                   <div *ngIf="events.length==0">
-                    <p style="color:red;font-size: 2.4rem; text-align:center"> Sorry No events found </p>
+                    <p style="color:red;font-size: 2rem; text-align:center"> Sorry No events found </p>
                 </div>
                   
                 
@@ -92,4 +98,5 @@
       
         
     </div>
+    
 </div>

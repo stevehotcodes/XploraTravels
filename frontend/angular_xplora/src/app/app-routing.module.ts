@@ -13,6 +13,7 @@ import { BookingsComponent } from './components/bookings/bookings.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserEventsComponent } from './components/user-events/user-events.component';
 import { UserBookingsComponent } from './components/user-bookings/user-bookings.component';
+import { EventEditComponent } from './components/event-edit/event-edit.component';
 
 const routes: Routes = [
   {path:"",component:LandingPageComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:"bookings",component:BookingsComponent},
   {path:"user",component:UserDashboardComponent},
   {path:"uevents",component:UserEventsComponent},
+  {path:"event/:id/edit"  ,component:EventEditComponent},
 
   {path:"**",component:NotfoundComponent}
   

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 
 export interface IUser{
-  [x: string]: any;
+  // [x: string]: any;
   id:string
   fullName:string
   email:string
@@ -60,7 +60,7 @@ export class UserService {
       //  'token':localStorage.getItem('token') as string
     })
     const apiUrl=`http://localhost:3400/users/update/`
-    return this.http.put<any>(apiUrl+id,{headers},userDetails)
+    return this.http.post<any>(apiUrl+id,{headers},userDetails)
   }
 
   getUserById(id:string):Observable<any>{
@@ -70,7 +70,6 @@ export class UserService {
     })
     const apiUrl=`http://localhost:3400/users/one/`
     return this.http.get<any>(apiUrl+id ,{headers})
-
   }
   
   logout(){

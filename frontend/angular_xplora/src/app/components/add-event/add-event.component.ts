@@ -9,7 +9,8 @@ import { EventsService } from 'src/app/services/events.service';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent {
-  addEventForm!:FormGroup
+  addEventForm!:FormGroup;
+
 
   constructor(private fb:FormBuilder, private eventSvc:EventsService, private router:Router){
     this.addEventForm=this.fb.group({
@@ -19,17 +20,24 @@ export class AddEventComponent {
        price:['',[Validators.required]],
        availableDate: ['',[Validators.required]],
       image:['',[Validators.required]],
+      slots:['',[Validators.required]],
       duration:['',[Validators.required]]
     })
   }
   onSubmit(){
-    let data=this.addEventForm.value
-    console.log(this.addEventForm.value)
-    this.eventSvc.addEvent(data).subscribe(res=>{
-      console.log("added successfully",res);
-      this.router.navigate(["/admin"])
-    })
+    if(this.addEventForm.value!==""){
+      let data=this.addEventForm.value
+      console.log(this.addEventForm.value)
+      this.eventSvc.addEvent(data).subscribe(res=>{
+        console.log("added successfully",res);
+        this.router.navigate(["/admin"])
+      })
+    }
+   
     
+    
+  }
+  cancel(){
     
   }
 

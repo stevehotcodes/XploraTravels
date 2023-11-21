@@ -89,5 +89,38 @@ app-add-event{
     color:rgb(161, 125, 125);
 
 }
+#flash-messages {
+    position: fixed;
+    z-index: 999;
+    top: 5svh;
+    right: 5svw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: min(400px, 60svw);
+}
+app-flash-messages {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: var(--light-red);
+}
+
+.success {
+    background-color: var(--light-green);
+}
+
+.info {
+    background-color: gray;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

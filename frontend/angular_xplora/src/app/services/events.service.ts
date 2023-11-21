@@ -14,7 +14,7 @@ export interface IEvent{
   duration:string
   isDeleted:string
   fullName:string
-
+  slots:string
 }
 
 @Injectable({
@@ -60,6 +60,16 @@ export class EventsService {
     })
     const apiUrl=`http://localhost:3400/tours/user/`
     return this.http.get(apiUrl+userID,{headers})
+  }
+  getEventById(id:string):Observable<IEvent[]>{
+    const apiUrl=`http://localhost:3400/tours/tour/`
+    return this.http.get<IEvent[]>(apiUrl+id)
+  }
+
+  updateEventDetails(id:string,eventDetails:any){
+    const apiUrl=`http://localhost:3400/tours/tour/`
+    return this.http.post(apiUrl+id,eventDetails)
+
   }
 
 

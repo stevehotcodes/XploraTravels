@@ -158,3 +158,23 @@ button {
 /* .card1>p{
     font-size: 1.5rem;
 } */
+table, th, td,tr {
+    border:1px solid black;
+    border-collapse: collapse;
+    border:none;
+    text-align:center;
+  }
+  th{
+    border-collapse: collapse;
+    background-color: rgb(218,226,248)
+  }
+ 
+tr{
+  background-color:rgb(233, 237, 247);
+  box-shadow: 2px 2px 2px 2px gray;
+  
+}
+table{
+  box-shadow: 2px 2px 2px 2px gray;
+  width:100%;
+}

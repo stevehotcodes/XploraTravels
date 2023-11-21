@@ -52,7 +52,7 @@
                 <h2>Events</h2>
                 <table>
                     <tr>
-                      <th>Event No</th>
+                      <!-- <th>Event No</th> -->
                      <th>Event Title</th>
                       <th>Event type</th>
                       <th>Destination</th>
@@ -61,8 +61,8 @@
                       <th>Booked by</th>
                       <th>Status</th>
                       </tr>
-                    <tr *ngFor="let event of events">
-                        <td>{{event.id}}</td>
+                    <tr *ngFor="let event of events; let i=index ">
+                        <!-- <td>{{event.index}}</td> -->
                         <td>{{event.title}}</td>
                         <td>{{event.tourType}}</td>
                         <td>{{event.destination}}</td>

@@ -1,6 +1,7 @@
 <div id="form-wrapper">
-    <h1>Create Event </h1>
+    <h1>Create Event </h1><button type="submit" id="cancel">cancel</button>
     <form id="signupForm" [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+        <div></div>
         <div  class="formgroup">
             <label>title</label>
             <input type="text" name="title" id="title"  formControlName="title">
@@ -31,6 +32,10 @@
             <input type="text" name="image" id="image" formControlName="image">
         </div>
         
+        <div  class="formgroup">
+            <label>slots</label>
+            <input type="text" name="image" id="image" formControlName="slots">
+        </div>
         <div  class="formgroup">
             <label>duration</label>
             <input type="text" name="duration" id="duration" formControlName="duration">
