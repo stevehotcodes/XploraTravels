@@ -68,7 +68,17 @@ button:hover{
     background-color: transparent;
     color:black;
 }
-#cancel{
-    background-color:red;
-    width:4rem;
+#button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    
 }
+svg{
+    width:2rem;
+}
+
+#button-wrapper>#cancel{
+       width:2rem;
+        display:right;
+    
+    } 

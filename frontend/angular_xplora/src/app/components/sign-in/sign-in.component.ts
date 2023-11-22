@@ -18,7 +18,7 @@ export class SignInComponent  {
   fontSize:number=1
   successMessage!:string
   role!:string
-  link:string = 'https://cdn.pixabay.com/photo/2022/03/31/13/50/login-7103076_640.png'
+  link!:string 
   
   constructor(private fb :FormBuilder, private router:Router,private UserSvc:UserService,private flashMsgSvc:FlashmessagesService){
     this.login=this.fb.group({
@@ -32,39 +32,46 @@ export class SignInComponent  {
 
  
     userAuthentication(){
-     this.userCredentials =this.login.value;
-    this.UserSvc.signInUser(this.userCredentials).subscribe(
-      res=>{
-          this.role=res.role
-          console.log("this is role",this.role,res.token);
-         this.loggedIn=true
-         this.successMessage="log in successfull"
-
-        //  this.link='https://cdn.pixabay.com/photo/2022/03/31/13/50/login-7103076_640.png'
-         
-          
-          if(this.role==='admin')
-            {
-              console.log("logged in as admin")
-              this.router.navigate(["/admin"])
-              
-             }
-          else if(this.role==='user'){
-            console.log("logged in as user");
-            this.router.navigate(["/user"]);
-            localStorage.setItem('token' ,res.token)
-            localStorage.setItem('userID',res.id)
-            
+      if(this.login.valid){
+        this.userCredentials =this.login.value;
+        this.UserSvc.signInUser(this.userCredentials).subscribe(
+          res=>{
+              this.role=res.role
+              console.log("this is role",this.role,res.token);
+             this.loggedIn=true
+             this.successMessage="log in successfull"
+                 this.link='https://cdn.pixabay.com/photo/2022/03/31/13/50/login-7103076_640.png'
+                           
+              if(this.role==='admin')
+                {
+                  console.log("logged in as admin")
+                  this.router.navigate(["/admin"])
+                  
+                 }
+              else if(this.role==='user'){
+                console.log("logged in as user");
+                this.router.navigate(["/user"]);
+                localStorage.setItem('token' ,res.token)
+                localStorage.setItem('userID',res.id)
+                
+              }
+    
           }
+        )
+             
+          this.flashMsgSvc.pushMessage({
+            type:'success',
+            message:'login successfully'
+          })
 
       }
-    )
-    
-  
-      // this.flashMsgSvc.pushMessage({
-      //   type:'success',
-      //   message:'login successfully'
-      // })
+      else{
+        this.flashMsgSvc.pushMessage({
+          type:'error',
+          message:'invalid'
+        })
+      }
+   
     
     
     }       

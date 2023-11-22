@@ -78,7 +78,7 @@ app-admin-dashboard,app-users,app-user-profile,app-events,app-bookings,app-user-
     flex-shrink: 1;
     background-color:grey;
 }
-app-add-event{
+app-add-event,app-event-edit{
     flex:1;
     /* border:2px solid red; */ 
     display:flex;

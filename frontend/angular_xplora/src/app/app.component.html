@@ -1,1 +1,4 @@
+<div id="flash-messages" *ngIf="messages">
+    <app-flash-messages class="{{message.type}}" *ngFor="let message of messages" [message]="message"></app-flash-messages>
+</div>
 <router-outlet></router-outlet>

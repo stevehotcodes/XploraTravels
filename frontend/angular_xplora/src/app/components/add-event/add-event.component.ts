@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EventsService } from 'src/app/services/events.service';
+import { FlashMessagesComponent } from '../flash-messages/flash-messages.component';
+import { FlashmessagesService } from 'src/app/services/flashmessages.service';
 
 @Component({
   selector: 'app-add-event',
@@ -12,7 +14,7 @@ export class AddEventComponent {
   addEventForm!:FormGroup;
 
 
-  constructor(private fb:FormBuilder, private eventSvc:EventsService, private router:Router){
+  constructor(private fb:FormBuilder, private eventSvc:EventsService, private router:Router,private flashSvc:FlashmessagesService){
     this.addEventForm=this.fb.group({
       title:['',[Validators.required]],
        tourType:['',[Validators.required]],
@@ -25,7 +27,7 @@ export class AddEventComponent {
     })
   }
   onSubmit(){
-    if(this.addEventForm.value!==""){
+    if(this.addEventForm.valid){
       let data=this.addEventForm.value
       console.log(this.addEventForm.value)
       this.eventSvc.addEvent(data).subscribe(res=>{
@@ -33,12 +35,19 @@ export class AddEventComponent {
         this.router.navigate(["/admin"])
       })
     }
+    else{
+      this.flashSvc.pushMessage({
+        type:'error',
+        message:'Invalid form'
+      })
+    }
    
     
     
   }
-  cancel(){
-    
-  }
+  
+  close(){
+    this.router.navigate(["/events"])
+ }
 
 }

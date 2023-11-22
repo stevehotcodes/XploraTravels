@@ -25,6 +25,8 @@ import { AddReviewsComponent } from './components/add-reviews/add-reviews.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FlashMessagesComponent } from './components/flash-messages/flash-messages.component';
 import { EventEditComponent } from './components/event-edit/event-edit.component';
+// import { ReviewComponent } from './component/review/review.component';
+// import { DisplayReviewComponent } from './compoents/display-review/display-review.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,8 @@ import { EventEditComponent } from './components/event-edit/event-edit.component
     UserBookingsComponent,
     AddReviewsComponent,
     FlashMessagesComponent,
-    EventEditComponent
+    EventEditComponent,
+  
     
      ],
   imports: [

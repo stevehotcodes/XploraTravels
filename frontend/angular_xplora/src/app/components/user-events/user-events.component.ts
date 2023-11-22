@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventsService, IEvent } from 'src/app/services/events.service';
+import { FlashmessagesService } from 'src/app/services/flashmessages.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class UserEventsComponent implements OnInit{
   isBooked:boolean=false
   userID!:string
   events!:IEvent[]
-  constructor(private eventSvc:EventsService,private userSvc:UserService,private route:Router){
+  
+  constructor(private eventSvc:EventsService,private userSvc:UserService,private route:Router,private flashSvc:FlashmessagesService){
    
     
   }
@@ -41,9 +43,14 @@ export class UserEventsComponent implements OnInit{
         console.log(`user${this.userID} booked this event successfully`,res)
       }
     )
-    alert("event booked successfully")
-    window.location.reload()
-    this.route.navigate(["user"])
+    this.flashSvc.pushMessage({
+      type:'success',
+      message:'event booked successfully'
+    })
+    
+    // alert("event booked successfully")
+    // window.location.reload()
+    // this.route.navigate(["user"])
 
   }
    

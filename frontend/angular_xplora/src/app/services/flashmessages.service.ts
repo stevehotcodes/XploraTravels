@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IflashMessage } from '../components/flash-messages/flash-messages.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

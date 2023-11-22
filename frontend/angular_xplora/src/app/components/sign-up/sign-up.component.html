@@ -1,7 +1,7 @@
 <div id="form-wrapper">
     <h1>Sign up </h1>
     <form id="signupForm" [formGroup]="signUpForm"  (ngSubmit)="createUser()">
-        <p *ngIf="isSignUp==true">{{notification}}</p>
+        <p *ngIf="isSignUp">{{notification}}</p>
         <div  class="formgroup">
             <label>Fullname</label>
             <input type="text" name="fullname" id="fullname"  formControlName="fullName">

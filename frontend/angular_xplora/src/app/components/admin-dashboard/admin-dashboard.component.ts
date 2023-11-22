@@ -13,7 +13,7 @@ export class AdminDashboardComponent {
     }
     logout(){
       this.router.navigate(['']);
-      localStorage.clear()
+      localStorage.removeItem('token')
       console.log(localStorage.getItem('token'));
   
   

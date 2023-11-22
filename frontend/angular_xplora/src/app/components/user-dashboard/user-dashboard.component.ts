@@ -10,8 +10,10 @@ export class UserDashboardComponent {
 
 constructor(private router:Router){}
   logout(){
+     localStorage.removeItem('token')
+     localStorage.removeItem('userID')
     this.router.navigate(['']);
-    localStorage.clear()
+   
     console.log(localStorage.getItem('token'));
   }
 }

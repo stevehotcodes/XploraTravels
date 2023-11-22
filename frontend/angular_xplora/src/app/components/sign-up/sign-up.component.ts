@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FlashmessagesService } from 'src/app/services/flashmessages.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class SignUpComponent {
   notification:string=''
   
 
-  constructor(public fb:FormBuilder ,public router:Router,private userSvc:UserService){
+  constructor(public fb:FormBuilder ,public router:Router,private userSvc:UserService, private flashMsgSvc:FlashmessagesService){
     this.signUpForm=this.fb.group({
       fullName:  ['', [Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -29,7 +30,7 @@ export class SignUpComponent {
 
   
   createUser(){
-    if(this.signUpForm.value!==""){
+    if(this.signUpForm.invalid){
      
       let newUserData:any=this.signUpForm.value
       delete newUserData.confirmPassword
@@ -40,8 +41,12 @@ export class SignUpComponent {
             console.log(res.message);
             this.isSignUp=true;
             this.notification=res.message 
+            console.log(this.notification)
            
-        
+            this.flashMsgSvc.pushMessage({
+              type: 'success',
+              message: res.message 
+            })
             this.router.navigate(["signin"])
              
         },
@@ -53,7 +58,11 @@ export class SignUpComponent {
 
     }
     else{
-      
+      this.flashMsgSvc.pushMessage({
+        type: 'error',
+        message: 'Invalid form ' 
+      })
+
       console.log("input required")
     }
    

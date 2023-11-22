@@ -10,6 +10,7 @@ import { EventsService, IEvent } from 'src/app/services/events.service';
 export class EventsComponent implements OnInit {
   events:IEvent[]=[]
   id!:string
+  isEditOpened:boolean=false
   constructor(private eventSvc:EventsService,private route:ActivatedRoute){
     
   }
